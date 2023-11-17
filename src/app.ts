@@ -33,6 +33,7 @@ class App {
 
     private initialiseControllers(controllers: Controller[]): void {
         controllers.forEach((controller: Controller) => {
+            // Début de toutes les routes : /api
             this.express.use('/api', controller.router);
         });
     }
@@ -43,11 +44,13 @@ class App {
 
     private initialiseDatabaseConnection(): void {
         const { MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
+        const connection = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_PATH}`
+        console.log(`Trying to connect to ... <${connection}>`)
         mongoose.connect(
             // Sans Docker mais avec mongo atlas
-            //'mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}'
+            connection, {authMechanism: 'DEFAULT'}
             // Avec Docker
-            `mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
+            // `mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
         )
     }
 

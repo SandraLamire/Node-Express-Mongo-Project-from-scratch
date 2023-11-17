@@ -1,0 +1,2 @@
+DOCKER NE FONCTIONNE PAS :
+erreur lors de l'exécution de la commande npm run build.
