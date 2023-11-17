@@ -38,7 +38,7 @@ class App {
     }
 
     private initialiseErrorHandling(): void {
-        this.express.use(ErrorMiddleware());
+        this.express.use(ErrorMiddleware);
     }
 
     private initialiseDatabaseConnection(): void {
