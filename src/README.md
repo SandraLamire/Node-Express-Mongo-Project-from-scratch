@@ -1,5 +1,6 @@
 # Première appli TypeScript + Node.js + Express + MongoDB
-Appli "Blog" avec possibilité de consulter et publier des posts dans la BDD
+- Appli "Blog" avec possibilité de consulter et publier des posts dans la BDD
+- npm 10.2.4
 
 # Utilisation : avec Postman
 - POST : http://localhost:3000/api/posts puis créer un post type : {"title": "test", "body": "blablabla" }
